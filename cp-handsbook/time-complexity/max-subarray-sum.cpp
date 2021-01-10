@@ -3,12 +3,12 @@
 using namespace std;
 
 int quadratic_solution (int *array, int length) {
-    int sum = array[0], maximum = array[0];
+    int  maximum = array[0];
 
     for (size_t i = 0; i < length; i++)
     {
-        int subarray_begin = array[i];
-        for (size_t j = 0; j < subarray_begin; j++)
+        int sum = 0;
+        for (size_t j = i; j < length; j++)
         {
             sum += array[j];
             if (sum > maximum) maximum = sum;
@@ -51,8 +51,10 @@ int main(int argc, char const *argv[])
     int length = sizeof(array) / sizeof(array[0]);
 
     int ls = linear_solution(array, length);
+    int qs = quadratic_solution(array, length);
 
     cout << ls << '\n';
+    cout << qs << '\n';
     
 
     return 0;
