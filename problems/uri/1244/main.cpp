@@ -26,26 +26,28 @@ vector <string> split_string(string text) {
 }
 
 void swap_strings (string *a, string *b) {
-    string temp = *a;
-    *a = *b;
-    *b = temp;
+  string temp = *a;
+  *a = *b;
+  *b = temp;
 }
 
 void bubble_sort (vector<string> &array)
 {
-    for (int i = 0; i < array.size(); i++) {
-      for(int j = 0; j < array.size() - 1; j++) { 
-        if (array[j].length() < array[j+1].length()) {
-          swap_strings(&array[j], &array[j+1]);
-        }
+  for (int i = 0; i < array.size(); i++) {
+    for(int j = 0; j < array.size() - 1; j++) { 
+      if (array[j].length() < array[j+1].length()) {
+        swap_strings(&array[j], &array[j+1]);
       }
     }
+  }
 }
 
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+
   int n;
 	cin >> n;
 
